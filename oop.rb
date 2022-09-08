@@ -30,6 +30,32 @@ p wanda
 #  it should have a thirsty attribute, that is true by default
 #  it should have a drink method. When called, the thirsty attribute changes to false
 
+class Vampire
+
+  def initialize (name)
+    @name = name
+    @pet = "bat"
+    @thirsty = true
+  end
+
+  def pet_change (new_pet)
+    @pet = new_pet
+  end
+
+  def drink
+    if @thirsty == true
+      then @thirsty = false
+    end #ends if statement
+  end #ends drink method
+end #ends class Vampire
+
+
+frank_the_vampire = Vampire.new ("Frank")
+p frank_the_vampire
+
+frank_the_vampire.pet_change ("elephant")
+frank_the_vampire.drink
+p frank_the_vampire
 
 #  Write a Dragon class
 #  it should have a dynamic name attribute (string)
