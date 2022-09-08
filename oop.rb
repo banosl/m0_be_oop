@@ -143,12 +143,12 @@ p billy
 
 billy.celebrate_birthday
 p billy
-
 billy.level_up(54)
 p billy
 
 harry = Hobbit.new ("Harry"), ("Wise")
 harry.level_up(154)
+harry.is_he_frodo?
 p harry
 
 frodo = Hobbit.new ("Frodo"), ("Unsure")
