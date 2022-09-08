@@ -103,3 +103,54 @@ p ivan_the_terrible_lizard
 #  it should have an is_adult attribute (boolean) that is false by default. once a Hobbit is 33, it should be an adult
 #  it should have an is_old attribute that defaults to false. once a Hobbit is 101, it is old.
 #  it should have a has_ring attribute. If the Hobbit's name is "Frodo", true, if not, false.
+
+class Hobbit
+attr_reader :name
+
+
+  def initialize (name, disposition)
+    @name = name
+    @disposition = disposition
+    @age = 0
+    @is_adult = false
+    @is_old = false
+    @has_ring = false
+  end
+
+  def celebrate_birthday
+    @age = @age + 1
+  end
+
+  def level_up (level_up_age)
+    @age = level_up_age
+    if @age >= 101
+      then @is_old = true && @is_adult = true
+    elsif @age >= 33 && @age < 101
+      then @is_adult = true
+    end
+  end #end level up method
+
+  def is_he_frodo?
+    if name == "Frodo"
+      then @has_ring = true
+    end
+  end
+
+end #ends class Hobbit
+
+billy = Hobbit.new ("Billy"), ("rancid")
+p billy
+
+billy.celebrate_birthday
+p billy
+
+billy.level_up(54)
+p billy
+
+harry = Hobbit.new ("Harry"), ("Wise")
+harry.level_up(154)
+p harry
+
+frodo = Hobbit.new ("Frodo"), ("Unsure")
+frodo.is_he_frodo?
+p frodo
